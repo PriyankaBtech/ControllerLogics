@@ -5,7 +5,7 @@ const Comment = require('../models/comment');
 exports.addComment = async (req, res) => {
    try {
     const { videoId, userId, content } = req.body;
-    const comment = await new Comment({ videoId, userId, content });
+    const comment = new Comment({ videoId, userId, content });
     await res.comment.save();
     res.status(201).json(comment)
 
